@@ -1,0 +1,82 @@
+{% extends "subpage.html" %}
+
+{% block page_eyebrow %}Careers{% endblock %}
+{% block page_title %}Placements & Careers{% endblock %}
+{% block page_subtitle %}Statistics, top recruiters, and career services for students and alumni.{% endblock %}
+
+{% block page_content %}
+  <div class="grid cols-2" style="margin-top:12px;">
+    <div class="card">
+      <h3 style="margin-top:0;">Placement Highlights</h3>
+      <div class="stats-grid" style="margin-top:10px;">
+        <div class="stat card"><div class="stat-number">₹35 LPA</div><div class="stat-label">Highest package</div></div>
+        <div class="stat card"><div class="stat-number">₹8.2 LPA</div><div class="stat-label">Average package</div></div>
+        <div class="stat card"><div class="stat-number">86%</div><div class="stat-label">Placement rate</div></div>
+        <div class="stat card"><div class="stat-number">120+</div><div class="stat-label">Recruiters</div></div>
+      </div>
+
+      <h4 style="margin-top:14px;">Top recruiters</h4>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;align-items:center;">
+        <img loading="lazy" src="/static/images/recruiter1.svg" style="width:110px;" alt="recruiter 1"/>
+        <img loading="lazy" src="/static/images/recruiter2.svg" style="width:110px;" alt="recruiter 2"/>
+        <img loading="lazy" src="/static/images/recruiter3.svg" style="width:110px;" alt="recruiter 3"/>
+        <img loading="lazy" src="/static/images/recruiter4.svg" style="width:110px;" alt="recruiter 4"/>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0;">Career Services & Internships</h3>
+      <p class="muted">Our Career Services office offers end-to-end support: resume clinics, interview prep, employer fairs, and internship placement across sectors.</p>
+
+      <h4 style="margin-top:12px;">Placement process</h4>
+      <ol class="muted" style="padding-left:18px; margin-top:8px;">
+        <li>Pre-placement talks and company registration</li>
+        <li>Shortlisting and technical interviews</li>
+        <li>HR rounds and offer negotiation</li>
+        <li>Onboarding and joining support</li>
+      </ol>
+
+      <h4 style="margin-top:12px;">Student success stories</h4>
+      <div style="margin-top:8px;">
+        <blockquote class="muted">"Secured an internship that turned into a full-time role after graduation." — Priya S., Class of 2022</blockquote>
+        <blockquote class="muted">"Placement support and industry projects helped me transition into data engineering." — Rahul M., Class of 2021</blockquote>
+      </div>
+
+      <div style="margin-top:12px;">
+        <a class="btn btn-primary" href="/contact">Contact Career Services</a>
+        <a class="btn btn-outline" href="/news" style="margin-left:8px;">Read placement reports</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="split">
+      <div class="card">
+        <h3 style="margin-top:0;">Career toolkit</h3>
+        <ul class="muted">
+          <li>Resume and portfolio review clinics</li>
+          <li>Mock interviews with alumni panels</li>
+          <li>Salary negotiation workshops</li>
+        </ul>
+        <a class="btn btn-outline" href="/contact" style="margin-top:8px;">Book a session</a>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0;">Placement calendar</h3>
+        <div class="list-grid" style="margin-top:10px;">
+          <div class="metric">
+            <div class="metric-value">Aug 2026</div>
+            <div class="metric-label">Internship drive</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">Oct 2026</div>
+            <div class="metric-label">Core placements</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">Jan 2027</div>
+            <div class="metric-label">Open roles</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

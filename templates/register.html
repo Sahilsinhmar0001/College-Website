@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="split">
+    <div class="card form-card">
+      <h1 style="margin-top:0;">Create an account</h1>
+      <p class="muted">New registrations create `student` accounts by default.</p>
+      <form method="post" style="margin-top:12px;">
+        <div class="form-row">
+          <label for="username">Username</label>
+          <input id="username" name="username" required>
+        </div>
+        <div class="form-row">
+          <label for="password">Password</label>
+          <input id="password" type="password" name="password" required>
+        </div>
+        <div>
+          <button class="btn btn-primary" type="submit">Register</button>
+        </div>
+      </form>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0;">Before you register</h3>
+      <p class="muted">Admissions accounts are typically created after application review.</p>
+      <ul class="muted">
+        <li>Use your official email address</li>
+        <li>Keep your application ID ready</li>
+        <li>Contact admissions for activation</li>
+      </ul>
+      <a class="btn btn-outline" href="/admissions" style="margin-top:8px;">Start an application</a>
+    </div>
+  </div>
+{% endblock %}

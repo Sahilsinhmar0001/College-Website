@@ -1,0 +1,90 @@
+{% extends "subpage.html" %}
+
+{% block page_eyebrow %}Academics{% endblock %}
+{% block page_title %}Courses & Programs{% endblock %}
+{% block page_subtitle %}Explore UG, PG and PhD programs. Use the filter to find programs by stream.{% endblock %}
+
+{% block page_content %}
+  <div class="controls" style="margin-top:12px;display:flex;gap:12px;flex-wrap:wrap;">
+    <input id="course-search" placeholder="Search courses" class="control-input" />
+    <select id="stream-filter" class="control-input">
+      <option value="">All Streams</option>
+      <option>Engineering</option>
+      <option>Management</option>
+      <option>Arts</option>
+      <option>Science</option>
+    </select>
+  </div>
+
+  <div id="courses-list" class="grid" style="margin-top:16px;"></div>
+
+  <template id="course-template">
+    <div class="card">
+      <div style="display:flex;gap:12px;align-items:flex-start;">
+        <div style="width:84px;flex:0 0 84px;"><img loading="lazy" src="/static/images/hero.svg" alt="course" style="width:84px;height:56px;object-fit:cover;border-radius:6px;"/></div>
+        <div style="flex:1;">
+          <h3 class="course-title" style="margin:0 0 6px 0;"></h3>
+          <div class="muted course-meta" style="font-size:0.9rem;margin-bottom:8px;"></div>
+          <p class="muted course-desc" style="margin:0 0 8px 0"></p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <a class="btn btn-primary course-apply" href="/admissions">Apply Now</a>
+            <a class="btn btn-outline" href="#">Download Syllabus</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <script>
+    // course rendering handled by static/main.js
+  </script>
+
+  <section class="section">
+    <h3>Program formats</h3>
+    <div class="grid cols-3" style="margin-top:12px;">
+      <div class="card">
+        <strong>Major + Minor</strong>
+        <div class="muted">Combine disciplines and build a differentiated profile.</div>
+      </div>
+      <div class="card">
+        <strong>Honors track</strong>
+        <div class="muted">Research mentorship and an advanced capstone.</div>
+      </div>
+      <div class="card">
+        <strong>Industry studio</strong>
+        <div class="muted">Solve real-world problems with partner organizations.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="split">
+      <div class="card">
+        <h3 style="margin-top:0;">Academic advising</h3>
+        <p class="muted">Every student gets a dedicated advisor for course planning, internships, and higher studies.</p>
+        <ul class="muted">
+          <li>Degree audits and graduation planning</li>
+          <li>Portfolio reviews every semester</li>
+          <li>Research and exchange guidance</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0;">Outcomes by stream</h3>
+        <div class="list-grid" style="margin-top:10px;">
+          <div class="metric">
+            <div class="metric-value">92%</div>
+            <div class="metric-label">Engineering placement</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">88%</div>
+            <div class="metric-label">Management placement</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">86%</div>
+            <div class="metric-label">Science placement</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

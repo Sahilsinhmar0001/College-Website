@@ -1,0 +1,105 @@
+{% extends "subpage.html" %}
+
+{% block page_eyebrow %}Academics{% endblock %}
+{% block page_title %}Faculty & Departments{% endblock %}
+{% block page_subtitle %}Meet department heads, faculty, labs and achievements.{% endblock %}
+
+{% block page_content %}
+  <section style="margin-top:12px;" class="grid cols-3">
+    <div class="card">
+      <h3>Department of Science</h3>
+      <p class="muted"><strong>HOD:</strong> Dr. Alex Morgan</p>
+      <h4>Faculty</h4>
+      <ul class="muted">
+        <li>Dr. A — PhD, Research in Biotech</li>
+        <li>Dr. B — PhD, Quantum Materials</li>
+        <li>Dr. Neha Rao — PhD, Environmental Science (Climate & Sustainability)</li>
+        <li>Dr. Omar Khalid — PhD, Computational Biology</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Department of Arts</h3>
+      <p class="muted"><strong>HOD:</strong> Prof. Maria Gomez</p>
+      <h4>Faculty</h4>
+      <ul class="muted">
+        <li>Prof. C — MA, Contemporary Literature</li>
+        <li>Dr. Elena Petrova — PhD, Cultural Studies</li>
+        <li>Dr. Sanjay Verma — PhD, Media & Communication</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Department of Engineering</h3>
+      <p class="muted"><strong>HOD:</strong> Dr. Li Wei</p>
+      <h4>Faculty</h4>
+      <ul class="muted">
+        <li>Prof. R. Gupta — PhD, Thermofluids</li>
+        <li>Dr. Priyanka Joshi — PhD, Robotics and Automation</li>
+        <li>Dr. Marcus Allen — PhD, Embedded Systems</li>
+      </ul>
+      <h4 style="margin-top:12px;">Labs & Facilities</h4>
+      <ul class="muted">
+        <li>Robotics Lab, Electronics Lab, Advanced Materials Workshop</li>
+      </ul>
+    </div>
+  </section>
+
+  <section style="margin-top:22px;">
+    <h3>Featured Faculty</h3>
+    <div class="grid cols-3" style="margin-top:12px;">
+      <div class="card">
+        <img loading="lazy" src="/static/images/staff_1.svg" alt="Dr. Neha Rao" style="width:100%;border-radius:8px;margin-bottom:10px;"/>
+        <strong>Dr. Neha Rao</strong>
+        <div class="muted">Associate Professor, Environmental Science</div>
+        <p class="muted" style="margin-top:8px;">Research: Climate resilience, sustainable urban ecosystems. Contact: neha.rao@example.edu</p>
+      </div>
+      <div class="card">
+        <img loading="lazy" src="/static/images/staff_2.svg" alt="Dr. Omar Khalid" style="width:100%;border-radius:8px;margin-bottom:10px;"/>
+        <strong>Dr. Omar Khalid</strong>
+        <div class="muted">Assistant Professor, Computational Biology</div>
+        <p class="muted" style="margin-top:8px;">Research: Genomic data analysis, bioinformatics pipelines. Contact: omar.khalid@example.edu</p>
+      </div>
+      <div class="card">
+        <img loading="lazy" src="/static/images/staff_3.svg" alt="Dr. Priyanka Joshi" style="width:100%;border-radius:8px;margin-bottom:10px;"/>
+        <strong>Dr. Priyanka Joshi</strong>
+        <div class="muted">Senior Lecturer, Robotics</div>
+        <p class="muted" style="margin-top:8px;">Focus: Autonomous systems, industrial automation. Contact: priyanka.joshi@example.edu</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h3>Research clusters</h3>
+    <div class="grid cols-3" style="margin-top:12px;">
+      <div class="card">
+        <strong>Climate & Sustainability</strong>
+        <div class="muted">Urban resilience, energy systems, and environmental policy.</div>
+      </div>
+      <div class="card">
+        <strong>AI & Data Systems</strong>
+        <div class="muted">Applied AI, health analytics, and responsible computing.</div>
+      </div>
+      <div class="card">
+        <strong>Advanced Materials</strong>
+        <div class="muted">Nanomaterials, manufacturing, and smart devices.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="split">
+      <div class="card">
+        <h3 style="margin-top:0;">Office hours</h3>
+        <p class="muted">Weekly office hours are published in the student portal with appointment booking.</p>
+        <ul class="muted">
+          <li>Mon-Thu: 2:00 PM - 5:00 PM</li>
+          <li>Fri: Research supervision only</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0;">Mentorship program</h3>
+        <p class="muted">Small-group mentorship pods connect students with faculty every month.</p>
+        <a class="btn btn-outline" href="/contact" style="margin-top:8px;">Request a mentor</a>
+      </div>
+    </div>
+  </section>
+{% endblock %}

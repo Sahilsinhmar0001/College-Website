@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% block content %}
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;">
+    <div>
+      <h1>Dashboard</h1>
+      <p class="muted">Welcome, <strong>{{ user.username }}</strong> — role: <strong>{{ role }}</strong></p>
+    </div>
+    <div>
+      <a class="btn btn-outline" href="/">Back to site</a>
+    </div>
+  </div>
+
+  <section style="margin-top:18px;" class="grid cols-3">
+    {% if role == 'student' %}
+      <div class="card">
+        <h3>Student Panel</h3>
+        <ul class="muted">
+          <li>View courses</li>
+          <li>Check grades</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Schedule</h3>
+        <p class="muted">Upcoming classes and events.</p>
+      </div>
+      <div class="card">
+        <h3>Resources</h3>
+        <p class="muted">Library, counselling, and support services.</p>
+      </div>
+    {% elif role == 'teacher' %}
+      <div class="card">
+        <h3>Teacher Panel</h3>
+        <ul class="muted">
+          <li>Manage classes</li>
+          <li>Post assignments</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Courses</h3>
+        <p class="muted">Course rosters and grading.</p>
+      </div>
+      <div class="card">
+        <h3>Communication</h3>
+        <p class="muted">Messages and announcements.</p>
+      </div>
+    {% endif %}
+  </section>
+  <section style="margin-top:20px;">
+    {% if role == 'student' %}
+      <div class="card">
+        <h3 style="margin-top:0;">My Courses & Grades</h3>
+        <table style="width:100%;border-collapse:collapse;margin-top:8px;">
+          <tr style="text-align:left;color:var(--muted)"><th>Course</th><th>Instructor</th><th>Grade</th></tr>
+          <tr><td>Intro to Biology</td><td>Dr. Alex Morgan</td><td><strong>A-</strong></td></tr>
+          <tr><td>Calculus I</td><td>Prof. Li Wei</td><td><strong>B+</strong></td></tr>
+          <tr><td>World Literature</td><td>Prof. Maria Gomez</td><td><strong>A</strong></td></tr>
+        </table>
+      </div>
+    {% elif role == 'teacher' %}
+      <div class="card">
+        <h3 style="margin-top:0;">Assigned Classes</h3>
+        <ul class="muted">
+          <li>Biology 101 — 32 students</li>
+          <li>Sustainable Systems — 18 students</li>
+        </ul>
+      </div>
+    {% endif %}
+  </section>
+
+  <section class="section">
+    <div class="split">
+      <div class="card">
+        <h3 style="margin-top:0;">Quick actions</h3>
+        <div class="tag-group" style="margin-top:6px;">
+          <span class="pill">Update profile</span>
+          <span class="pill">View calendar</span>
+          <span class="pill">Request transcript</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0;">Announcements</h3>
+        <ul class="muted">
+          <li>Midterm feedback surveys open this week.</li>
+          <li>Library hours extended during exams.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+{% endblock %}

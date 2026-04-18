@@ -1,0 +1,13 @@
+[
+  { "title": "B.Tech in Computer Science", "stream": "Engineering", "level": "UG", "duration": "4 years", "eligibility": "12th with Math", "fee": "₹120,000/year", "career": "Software Engineer, Data Scientist", "desc": "Core computing, algorithms, systems." },
+  { "title": "B.Tech in Electronics & Communication", "stream": "Engineering", "level": "UG", "duration": "4 years", "eligibility": "12th with Math", "fee": "₹115,000/year", "career": "Embedded Engineer, RF Engineer", "desc": "Circuits, signals, embedded systems." },
+  { "title": "B.Eng. Mechanical", "stream": "Engineering", "level": "UG", "duration": "4 years", "eligibility": "12th with Math/Physics", "fee": "₹110,000/year", "career": "Design Engineer, CAD Specialist", "desc": "Thermofluids, mechanics, design labs." },
+  { "title": "B.Sc. Mathematics", "stream": "Science", "level": "UG", "duration": "3 years", "eligibility": "12th with Math", "fee": "₹45,000/year", "career": "Analyst, Research Assistant", "desc": "Pure and applied mathematics." },
+  { "title": "B.Sc. Physics", "stream": "Science", "level": "UG", "duration": "3 years", "eligibility": "12th with Science", "fee": "₹50,000/year", "career": "Lab Technician, Research", "desc": "Classical and modern physics, labs." },
+  { "title": "B.A. Literature", "stream": "Arts", "level": "UG", "duration": "3 years", "eligibility": "12th in any stream", "fee": "₹40,000/year", "career": "Writer, Editor, Teacher", "desc": "Literature, criticism, creative writing." },
+  { "title": "BBA in Management", "stream": "Management", "level": "UG", "duration": "3 years", "eligibility": "12th in any stream", "fee": "₹80,000/year", "career": "Business Analyst, Manager", "desc": "Business fundamentals, marketing, finance." },
+  { "title": "M.Sc. Physics", "stream": "Science", "level": "PG", "duration": "2 years", "eligibility": "BSc Physics", "fee": "₹60,000/year", "career": "Researcher, Lab Engineer", "desc": "Advanced physics, lab work, research." },
+  { "title": "M.Sc. Data Science", "stream": "Science", "level": "PG", "duration": "2 years", "eligibility": "Bachelor's in relevant field", "fee": "₹140,000/year", "career": "Data Scientist, ML Engineer", "desc": "Statistics, ML, data engineering." },
+  { "title": "MBA (Finance)", "stream": "Management", "level": "PG", "duration": "2 years", "eligibility": "Bachelor's + entrance exam", "fee": "₹200,000/year", "career": "Finance Manager, Analyst", "desc": "Corporate finance, investments, strategy." },
+  { "title": "PhD in Environmental Studies", "stream": "Science", "level": "PhD", "duration": "3-5 years", "eligibility": "Master's degree", "fee": "Varies", "career": "Researcher, Consultant", "desc": "Interdisciplinary environmental research." }
+]

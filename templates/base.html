@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>College Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  {% set page_class = 'home' if request.path == '/' else request.path.strip('/') %}
+  <body class="page-{{ page_class|replace('/', '-') }}">
+    <header id="site-header">
+      <div class="top-ribbon">
+        <div class="container">
+          <div>Admissions open for 2026. Applications close Apr 15, 2026.</div>
+          <a href="/admissions">Start application</a>
+        </div>
+      </div>
+      <div class="container">
+        <nav>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div class="nav-brand"><a href="/" style="color:inherit; text-decoration:none;">College</a></div>
+            <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+          </div>
+          <div class="nav-links" id="nav-links">
+            <a href="/" class="{% if request.path == '/' %}active{% endif %}">Home</a>
+            <a href="/courses" class="{% if request.path == '/courses' %}active{% endif %}">Courses</a>
+            <a href="/admissions" class="{% if request.path == '/admissions' %}active{% endif %}">Admissions</a>
+            <a href="/placements" class="{% if request.path == '/placements' %}active{% endif %}">Placements</a>
+            <a href="/faculty" class="{% if request.path == '/faculty' %}active{% endif %}">Faculty</a>
+            <a href="/campus" class="{% if request.path == '/campus' %}active{% endif %}">Campus</a>
+            <a href="/news" class="{% if request.path == '/news' %}active{% endif %}">News</a>
+            <a href="/contact" class="{% if request.path == '/contact' %}active{% endif %}">Contact</a>
+            <a href="/about" class="{% if request.path == '/about' %}active{% endif %}">About</a>
+            {% if g.user %}
+              <a href="/dashboard">Dashboard</a>
+              <a href="/logout">Logout</a>
+            {% else %}
+              <button id="loginBtn" class="btn btn-outline">Login</button>
+              <button id="themeToggle" class="btn" aria-label="Toggle theme">🌙</button>
+            {% endif %}
+            <a class="btn btn-primary" href="/admissions">Apply Now</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <button id="backToTop" class="btn" aria-label="Back to top">↑</button>
+    <main class="container">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <ul class="flashes">
+          {% for category, msg in messages %}
+            <li class="{{ category }}">{{ msg }}</li>
+          {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+      {% block content %}{% endblock %}
+      <section class="site-cta" aria-label="Admissions CTA">
+        <div class="cta-content">
+          <div>
+            <div class="eyebrow">Next steps</div>
+            <h2 style="margin:8px 0 6px 0;">Plan your admission journey</h2>
+            <p class="subtle" style="margin:0;">Get program guidance, scholarship options, and a personalized checklist.</p>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <a class="btn btn-cta" href="/admissions">Start application</a>
+            <a class="btn btn-outline" href="/contact">Talk to an advisor</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-title">College</div>
+            <div class="muted">A modern campus for research, innovation, and career-focused learning.</div>
+            <div class="tag-group" style="margin-top:10px;">
+              <span class="pill">Research</span>
+              <span class="pill">Mentorship</span>
+              <span class="pill">Global</span>
+            </div>
+          </div>
+          <div>
+            <div class="footer-title">Academics</div>
+            <a href="/courses">Programs</a>
+            <a href="/faculty">Faculty</a>
+            <a href="/news">Research news</a>
+            <a href="/placements">Career outcomes</a>
+          </div>
+          <div>
+            <div class="footer-title">Admissions</div>
+            <a href="/admissions">Apply online</a>
+            <a href="/admissions">Scholarships</a>
+            <a href="/contact">Visit campus</a>
+            <a href="/contact">Counseling</a>
+          </div>
+          <div>
+            <div class="footer-title">Campus</div>
+            <a href="/campus">Life & housing</a>
+            <a href="/campus">Clubs & events</a>
+            <a href="/contact">Support services</a>
+            <a href="/about">About</a>
+          </div>
+        </div>
+        <div class="footer-note">
+          <div>Copyright College Demo</div>
+          <div>Built for demonstration purposes</div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Login modal -->
+    <div id="loginModal" class="modal" aria-hidden="true">
+      <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+        <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+        <h2 id="loginTitle">Sign in</h2>
+        <div class="role-tabs">
+          <button class="role-tab active" data-role="student">Student</button>
+          <button class="role-tab" data-role="teacher">Teacher</button>
+        </div>
+        <form id="loginForm" method="post" action="/login">
+          <input type="hidden" name="portal" id="portalInput" value="student">
+          <div class="form-row">
+            <label>Username<br><input name="username" required></label>
+          </div>
+          <div class="form-row">
+            <label>Password<br><input type="password" name="password" required></label>
+          </div>
+          <div style="display:flex;gap:8px;align-items:center;margin-top:8px;">
+            <button type="submit" class="btn btn-primary">Sign in</button>
+            <button type="button" id="cancelBtn" class="btn btn-outline">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="/static/main.js"></script>
+  </body>
+</html>
+
+

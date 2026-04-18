@@ -1,0 +1,58 @@
+{% extends "subpage.html" %}
+
+{% block page_eyebrow %}Connect{% endblock %}
+{% block page_title %}Contact & Location{% endblock %}
+{% block page_subtitle %}How to reach us, office contacts, and an enquiry form.{% endblock %}
+
+{% block page_content %}
+  <div class="grid cols-2" style="margin-top:12px;">
+    <div class="card">
+      <h3 style="margin-top:0;">Get in touch</h3>
+      <ul class="muted">
+        <li><strong>Admissions:</strong> admissions@college.edu | +91 98765 43210</li>
+        <li><strong>Support:</strong> support@college.edu | +91 91234 56789</li>
+      </ul>
+      <h4 style="margin-top:12px;">Social</h4>
+      <div style="display:flex;gap:8px;">
+        <a class="btn btn-outline" href="#">Twitter</a>
+        <a class="btn btn-outline" href="#">Facebook</a>
+        <a class="btn btn-outline" href="#">Instagram</a>
+      </div>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0;">Location</h3>
+      <div style="position:relative;padding-top:56.25%;">
+        <iframe src="https://maps.google.com/maps?q=college&amp;output=embed" style="position:absolute;left:0;top:0;width:100%;height:100%;border:0;" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <section style="margin-top:16px;" class="card">
+    <h3 style="margin-top:0;">Enquiry Form</h3>
+    <form>
+      <div class="form-row"><label for="enq-name">Name</label><input id="enq-name"/></div>
+      <div class="form-row"><label for="enq-email">Email</label><input id="enq-email" type="email"/></div>
+      <div class="form-row"><label for="enq-msg">Message</label><textarea id="enq-msg" rows="4"></textarea></div>
+      <div><button class="btn btn-primary" type="button">Send Inquiry</button></div>
+    </form>
+  </section>
+
+  <section class="section">
+    <div class="split">
+      <div class="card">
+        <h3 style="margin-top:0;">Office hours</h3>
+        <div class="muted">Monday to Friday, 9:00 AM - 6:00 PM</div>
+        <div class="muted">Saturday, 10:00 AM - 2:00 PM</div>
+        <div class="callout" style="margin-top:10px;">Campus tours are available by appointment.</div>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0;">Department directory</h3>
+        <ul class="muted">
+          <li>Admissions: admissions@college.edu</li>
+          <li>International office: global@college.edu</li>
+          <li>Career services: careers@college.edu</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+{% endblock %}

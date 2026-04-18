@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;">
+    <div>
+      <h1 style="margin-top:0;">Admin Panel</h1>
+      <p class="muted">Manage accounts, roles, and access across the campus portal.</p>
+    </div>
+    <div class="tag-group">
+      <span class="pill">System healthy</span>
+      <span class="pill">2 roles</span>
+      <span class="pill">{{ users|length }} users</span>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="split">
+      <div class="card">
+        <h2 style="margin-top:0;">Create user</h2>
+        <form method="post" action="/admin/create_user">
+          <div class="form-row"><label>Username<br><input name="username" required></label></div>
+          <div class="form-row"><label>Password<br><input type="password" name="password" required></label></div>
+          <div class="form-row"><label>Role<br>
+            <select name="role">
+              <option value="student">student</option>
+              <option value="teacher">teacher</option>
+            </select>
+          </label></div>
+          <button class="btn btn-primary" type="submit">Create</button>
+        </form>
+      </div>
+      <div class="card">
+        <h2 style="margin-top:0;">Admin checklist</h2>
+        <ul class="muted">
+          <li>Verify new user details before activation.</li>
+          <li>Review role-based access every semester.</li>
+          <li>Export the user list for audits.</li>
+        </ul>
+        <div class="callout" style="margin-top:10px;">
+          <strong>Tip:</strong> Use strong passwords for faculty accounts.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card">
+      <h2 style="margin-top:0;">Existing users</h2>
+      <table style="width:100%;border-collapse:collapse;margin-top:8px;">
+        <thead>
+          <tr style="text-align:left;color:var(--muted)"><th>ID</th><th>Username</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          {% for u in users %}
+            <tr><td>{{ u.id }}</td><td>{{ u.username }}</td><td>{{ u.role }}</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+{% endblock %}

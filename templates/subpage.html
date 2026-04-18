@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+  <header class="page-hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="eyebrow">{% block page_eyebrow %}Explore{% endblock %}</div>
+        <h1 class="hero-title">{% block page_title %}Page Title{% endblock %}</h1>
+        <p class="hero-sub">{% block page_subtitle %}{% endblock %}</p>
+        <div class="tag-group" style="margin-top:10px;">
+          {% block page_tags %}
+            <span class="pill">Student-first</span>
+            <span class="pill">Career-ready</span>
+            <span class="pill">Globally connected</span>
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+  </header>
+
+  {# Breadcrumb removed as requested - pages keep the hero only #}
+
+  <main class="page-body">
+    <section class="callout">
+      <strong>Need guidance?</strong>
+      <span class="subtle">Book a 15-minute call with an academic advisor for program fit and scholarship planning.</span>
+    </section>
+    {% block page_content %}{% endblock %}
+  </main>
+{% endblock %}

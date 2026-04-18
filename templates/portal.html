@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="card">
+    <h1 style="margin-top:0;">Portal access</h1>
+    <p class="muted">The unified portal is now available via the login button on the top right.</p>
+    <div class="split" style="margin-top:12px;">
+      <div class="card">
+        <h3 style="margin-top:0;">Student portal</h3>
+        <p class="muted">Access your schedule, grades, and learning resources.</p>
+        <a class="btn btn-primary" href="/login?portal=student">Go to student login</a>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0;">Teacher portal</h3>
+        <p class="muted">Manage courses, announcements, and student progress.</p>
+        <a class="btn btn-outline" href="/login?portal=teacher">Go to teacher login</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

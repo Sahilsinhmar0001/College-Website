@@ -1,0 +1,128 @@
+{% extends "subpage.html" %}
+
+{% block page_eyebrow %}About{% endblock %}
+{% block page_title %}About the College{% endblock %}
+{% block page_subtitle %}Our mission, values, and departments.{% endblock %}
+
+{% block page_content %}
+  <p>Our college is committed to academic excellence, research, and community engagement. We combine rigorous teaching with hands-on learning and industry partnerships.</p>
+
+  <section style="margin-top:18px;" aria-labelledby="quick-facts">
+    <h3 id="quick-facts">Quick facts</h3>
+    <div class="grid cols-3" style="margin-top:12px;">
+      <div class="card">
+        <strong>Established</strong>
+        <div class="muted">1965</div>
+      </div>
+      <div class="card">
+        <strong>Students</strong>
+        <div class="muted">4,200 (undergrad & postgrad)</div>
+      </div>
+      <div class="card">
+        <strong>Faculty</strong>
+        <div class="muted">220 full-time</div>
+      </div>
+    </div>
+  </section>
+
+  <section style="margin-top:20px; display:flex; gap:18px; flex-wrap:wrap; align-items:flex-start;">
+    <img loading="lazy" src="/static/images/hero.svg" alt="college campus" style="width:260px;border-radius:8px;"/>
+    <div style="flex:1; min-width:260px;">
+      <h3>Mission</h3>
+      <p class="muted">To educate and empower students to be ethical leaders, critical thinkers, and lifelong learners who contribute positively to society.</p>
+
+      <h3 style="margin-top:12px;">Vision</h3>
+      <p class="muted">To be a nationally recognized institution for academic excellence, impactful research, and meaningful community partnerships.</p>
+    </div>
+  </section>
+
+  <section style="margin-top:20px;" aria-labelledby="history">
+    <h3 id="history">A short history</h3>
+    <ol class="muted" style="margin-top:8px; padding-left:18px;">
+      <li><strong>1965</strong> — Founded as a liberal arts college with three departments.</li>
+      <li><strong>1988</strong> — Expanded programs to include engineering and applied sciences.</li>
+      <li><strong>2005</strong> — Established industry partnerships and an on-campus research center.</li>
+      <li><strong>2018</strong> — Launched postgraduate and professional development programs.</li>
+    </ol>
+  </section>
+
+  <section style="margin-top:20px;" aria-labelledby="accreditations">
+    <h3 id="accreditations">Accreditations & recognitions</h3>
+    <div class="grid cols-3" style="margin-top:12px; align-items:stretch;">
+      <div class="card">
+        <strong>National Accreditation</strong>
+        <div class="muted">Accredited by the National Higher Education Council</div>
+      </div>
+      <div class="card">
+        <strong>Industry Partners</strong>
+        <div class="muted">MoUs with leading technology and healthcare organizations</div>
+      </div>
+      <div class="card">
+        <strong>Rankings</strong>
+        <div class="muted">Consistently ranked among the top regional colleges for employability</div>
+      </div>
+    </div>
+  </section>
+
+  <section style="margin-top:20px;" aria-labelledby="programs">
+    <h3 id="programs">Programs offered</h3>
+    <div class="grid cols-3" style="margin-top:12px;">
+      <div class="card">
+        <strong>B.Sc. Computer Science</strong>
+        <div class="muted">Focus on software engineering, data science and systems.</div>
+      </div>
+      <div class="card">
+        <strong>B.A. Humanities</strong>
+        <div class="muted">Interdisciplinary arts, languages and social sciences.</div>
+      </div>
+      <div class="card">
+        <strong>B.Eng. Mechanical</strong>
+        <div class="muted">Practical labs, industry projects and design courses.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="leadership">
+    <h3 id="leadership">Leadership & governance</h3>
+    <div class="grid cols-3" style="margin-top:12px;">
+      <div class="card">
+        <strong>Dr. Kavita Menon</strong>
+        <div class="muted">Principal</div>
+        <p class="muted" style="margin-top:8px;">Focus on research excellence, partnerships, and student success.</p>
+      </div>
+      <div class="card">
+        <strong>Prof. Aaron Blake</strong>
+        <div class="muted">Dean - Academics</div>
+        <p class="muted" style="margin-top:8px;">Curriculum innovation and experiential learning.</p>
+      </div>
+      <div class="card">
+        <strong>Dr. Lina Hu</strong>
+        <div class="muted">Dean - Student Affairs</div>
+        <p class="muted" style="margin-top:8px;">Wellness, mentoring, and inclusion initiatives.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="impact">
+    <h3 id="impact">Community impact</h3>
+    <div class="list-grid" style="margin-top:12px;">
+      <div class="metric">
+        <div class="metric-value">120+</div>
+        <div class="metric-label">Annual outreach programs</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">35</div>
+        <div class="metric-label">Active research collaborations</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">18K</div>
+        <div class="metric-label">Volunteer hours per year</div>
+      </div>
+    </div>
+  </section>
+
+  <div style="margin-top:22px;">
+    <a class="btn btn-primary" href="/admissions">Explore admissions</a>
+    <a class="btn btn-outline" style="margin-left:8px;" href="/courses">View courses</a>
+  </div>
+{% endblock %}

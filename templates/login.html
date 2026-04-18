@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="split">
+    <div class="card form-card">
+      <h1 style="margin-top:0;">Sign in</h1>
+      <p class="muted">Choose portal and sign in. Sample accounts: student/studentpass, teacher/teacherpass</p>
+
+      <div style="margin-top:12px;display:flex;gap:8px;">
+        <button id="tab-student" class="btn btn-outline" type="button">Student</button>
+        <button id="tab-teacher" class="btn btn-outline" type="button">Teacher</button>
+      </div>
+
+      <form method="post" id="login-form" style="margin-top:12px;">
+        <input type="hidden" name="portal" id="portal" value="{{ request.args.get('portal','') }}">
+        <div class="form-row">
+          <label for="username">Username</label>
+          <input id="username" name="username" required>
+        </div>
+        <div class="form-row">
+          <label for="password">Password</label>
+          <input id="password" type="password" name="password" required>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center;">
+          <button id="login-submit" class="btn btn-primary" type="submit" disabled>Login</button>
+        </div>
+        <div id="portal-hint" class="muted" style="margin-top:8px;">Signing into the <strong>Student</strong> portal.</div>
+      </form>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0;">Portal access</h3>
+      <p class="muted">Student and faculty portals provide schedules, resources, and announcements.</p>
+      <ul class="muted">
+        <li>View courses and assessment timelines</li>
+        <li>Download materials and submit work</li>
+        <li>Connect with advisors and mentors</li>
+      </ul>
+      <div class="callout" style="margin-top:10px;">
+        <strong>Need help?</strong> Contact support@college.edu
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      var studentBtn = document.getElementById('tab-student');
+      var teacherBtn = document.getElementById('tab-teacher');
+      var portalInput = document.getElementById('portal');
+      var hint = document.getElementById('portal-hint');
+      var submit = document.getElementById('login-submit');
+      function clearSelection(){
+        studentBtn.classList.remove('btn-primary'); studentBtn.classList.add('btn-outline');
+        teacherBtn.classList.remove('btn-primary'); teacherBtn.classList.add('btn-outline');
+        portalInput.value = '';
+        submit.disabled = true;
+        hint.innerHTML = 'Please choose a portal before signing in.';
+      }
+      function setPortal(p){
+        portalInput.value = p;
+        submit.disabled = false;
+        if(p === 'student'){
+            studentBtn.classList.remove('btn-outline'); studentBtn.classList.add('btn-primary');
+            teacherBtn.classList.remove('btn-primary'); teacherBtn.classList.add('btn-outline');
+            hint.innerHTML = 'Signing into the <strong>Student</strong> portal.';
+        } else if(p === 'teacher'){
+          teacherBtn.classList.remove('btn-outline'); teacherBtn.classList.add('btn-primary');
+            studentBtn.classList.remove('btn-primary'); studentBtn.classList.add('btn-outline');
+            hint.innerHTML = 'Signing into the <strong>Teacher</strong> portal.';
+        }
+      }
+        studentBtn.addEventListener('click', function(){ setPortal('student'); });
+        teacherBtn.addEventListener('click', function(){ setPortal('teacher'); });
+      // init: if server provided portal via query string, preselect it
+      var initial = portalInput.value || '';
+      if(initial){ setPortal(initial); } else { clearSelection(); }
+    })();
+  </script>
+{% endblock %}

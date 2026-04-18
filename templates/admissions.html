@@ -1,0 +1,188 @@
+{% extends "subpage.html" %}
+
+{% block page_eyebrow %}Admissions{% endblock %}
+{% block page_title %}Admissions{% endblock %}
+{% block page_subtitle %}Apply online and check application requirements and timelines.{% endblock %}
+
+{% block page_content %}
+  <!-- Admissions page: clean layout with single form and sticky aside -->
+  <section class="page-hero admissions-hero card" style="margin-bottom:18px;">
+    <div class="hero-inner container" style="display:flex;align-items:center;justify-content:space-between;gap:18px;">
+      <div style="flex:1;min-width:260px;">
+        <h1 style="margin:0;font-size:1.9rem;">Start Your Admission Journey</h1>
+        <p class="muted" style="opacity:0.95;margin-top:8px;">Apply to our programs, upload documents, and track your application status online.</p>
+      </div>
+      <div style="width:180px;text-align:right;">
+        <span class="badge">Admissions Open</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="grid cols-2" style="gap:20px;">
+    <main>
+      <div class="card admissions-card">
+        <h3 style="margin-top:0;">Apply Online</h3>
+        <p class="muted">Fill the multi-step application form. Keep scans of your ID, mark sheets, and passport photo ready.</p>
+
+        <div style="margin-top:14px;">
+          <div class="progress" aria-hidden="true" style="height:12px;background:rgba(15,23,42,0.06);border-radius:999px;overflow:hidden;">
+            <div id="progressBar" style="width:33%;height:100%;background:linear-gradient(90deg,var(--primary),var(--accent));transition:width 300ms ease;"></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;margin-top:8px;align-items:center;">
+            <div style="font-weight:800;">Step <span id="stepIndex">1</span> of 3</div>
+            <div class="muted">Keep documents ready for upload</div>
+          </div>
+        </div>
+
+        <form id="multiForm" class="admissions-form" method="post" enctype="multipart/form-data" novalidate style="margin-top:12px;">
+          <!-- Step 1: Personal -->
+          <fieldset data-step="1" class="form-step">
+            <div class="field-grid">
+              <div class="form-row floating">
+                <input id="app-name" name="name" required placeholder=" " />
+                <label for="app-name">Full name *</label>
+                <div class="helper-text">Enter your full name as on official documents.</div>
+              </div>
+              <div class="form-row floating">
+                <input id="app-email" type="email" name="email" required placeholder=" " />
+                <label for="app-email">Email *</label>
+                <div id="email-valid" class="helper-text" aria-live="polite"></div>
+              </div>
+            </div>
+
+            <div class="field-grid" style="margin-top:12px;">
+              <div class="form-row floating">
+                <input id="app-phone" type="tel" name="phone" pattern="[0-9+\- ]{7,20}" placeholder=" " />
+                <label for="app-phone">Phone</label>
+              </div>
+              <div class="form-row floating">
+                <input id="app-dob" type="date" name="dob" placeholder=" " />
+                <label for="app-dob">Date of birth</label>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Step 2: Course -->
+          <fieldset data-step="2" class="form-step" style="display:none;">
+            <div class="form-row">
+              <label for="app-course">Intended Course</label>
+              <select id="app-course" name="course" required>
+                <option value="">Select a program</option>
+              </select>
+            </div>
+            <div style="margin-top:10px;" id="coursePreview"></div>
+          </fieldset>
+
+          <!-- Step 3: Documents & Review -->
+          <fieldset data-step="3" class="form-step" style="display:none;">
+            <div class="form-row">
+              <label>Upload Documents</label>
+              <div id="dropZone" class="file-drop" aria-labelledby="dropLabel">
+                <div style="text-align:center;padding:18px;">
+                  <div class="svg-anim icon-float">📎</div>
+                  <div id="dropLabel" class="muted">Drag & drop files here, or <button type="button" id="pickFiles" class="btn btn-outline" style="padding:6px 10px;">browse</button></div>
+                  <input id="fileInput" type="file" name="files" accept="image/*,.pdf" multiple style="display:none;" />
+                </div>
+              </div>
+              <div id="fileList" style="margin-top:10px;"></div>
+            </div>
+
+            <div style="margin-top:12px;">
+              <h4>Review</h4>
+              <div id="reviewBox" class="card" style="margin-top:8px;"></div>
+            </div>
+          </fieldset>
+
+          <div class="form-actions" style="margin-top:14px;">
+            <button type="button" id="backBtn" class="btn btn-outline" disabled>Back</button>
+            <button type="button" id="nextBtn" class="btn btn-primary">Next</button>
+            <button type="submit" id="submitBtn" class="btn btn-cta" style="display:none;">Submit & Pay ₹500</button>
+          </div>
+
+          <div id="toast" class="toast" role="status" aria-live="polite" style="display:none;"></div>
+        </form>
+      </div>
+    </main>
+
+    <aside class="admissions-aside">
+      <div class="card">
+        <h3 style="margin-top:0;">Important Dates</h3>
+        <div class="grid cols-1" style="margin-top:8px;">
+          <div class="card">
+            <strong>Applications open</strong>
+            <div class="muted">Oct 1, 2025</div>
+          </div>
+          <div class="card">
+            <strong>Last date</strong>
+            <div class="muted">Apr 15, 2026</div>
+          </div>
+          <div class="card">
+            <strong>Entrance exam</strong>
+            <div class="muted">May 5, 2026</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <h3 style="margin-top:0;">Application Fee</h3>
+        <div style="display:flex;justify-content:space-between;">
+          <div>Application Fee</div><div>₹500</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;margin-top:6px;">
+          <div>Processing Fee</div><div>₹0</div>
+        </div>
+        <hr style="margin:10px 0;" />
+        <div style="display:flex;justify-content:space-between;font-weight:800;">
+          <div>Total</div><div>₹500</div>
+        </div>
+        <div style="margin-top:10px;">
+          <div id="payBadge" class="text-danger">❌ Not Paid</div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <h3 style="margin-top:0;">Why choose us</h3>
+        <ul class="muted">
+          <li>Industry-linked curriculum</li>
+          <li>Active research & internships</li>
+          <li>High employability</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <section class="section">
+    <div class="split">
+      <div class="card">
+        <h3 style="margin-top:0;">Scholarships & financial aid</h3>
+        <p class="muted">Merit-based scholarships and need-based aid are available for eligible students.</p>
+        <div class="list-grid" style="margin-top:10px;">
+          <div class="metric">
+            <div class="metric-value">30%</div>
+            <div class="metric-label">Fee waiver cap</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">120</div>
+            <div class="metric-label">Scholarships awarded</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">3</div>
+            <div class="metric-label">Aid cycles per year</div>
+          </div>
+        </div>
+        <a class="btn btn-outline" href="/contact" style="margin-top:10px;">Ask about aid</a>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0;">Admissions FAQ</h3>
+        <ul class="muted">
+          <li>Do I need an entrance exam? Some programs require it.</li>
+          <li>Can I edit my application? Yes, until final submission.</li>
+          <li>How long is the review? Typical review time is 2-3 weeks.</li>
+        </ul>
+        <div class="callout" style="margin-top:10px;">
+          <strong>Tip:</strong> Upload clear scans to speed up verification.
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

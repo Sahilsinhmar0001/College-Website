@@ -1,0 +1,38 @@
+{% extends "subpage.html" %}
+
+{% block page_eyebrow %}Newsroom{% endblock %}
+{% block page_title %}News & Announcements{% endblock %}
+{% block page_subtitle %}Latest updates, notices and research highlights from the college.{% endblock %}
+
+{% block page_content %}
+  <div style="margin-top:12px;display:grid;gap:12px;">
+    <div class="card">
+      <h3 style="margin-top:0;">Exam Schedule Released</h3>
+      <div class="muted">Nov 2, 2025</div>
+      <p class="muted">Semester exams will be held from Dec 1. Check the noticeboard for details.</p>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0;">New Research Grant</h3>
+      <div class="muted">Sep 18, 2025</div>
+      <p class="muted">Faculty awarded a grant for sustainable tech research.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="split">
+      <div class="card">
+        <h3 style="margin-top:0;">Featured story</h3>
+        <p class="muted">Student teams built an affordable water purification system adopted by local communities.</p>
+        <a class="btn btn-outline" href="/about" style="margin-top:8px;">Read the impact story</a>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0;">Upcoming events</h3>
+        <ul class="muted">
+          <li>Mar 12, 2026: Research poster showcase</li>
+          <li>Apr 08, 2026: Alumni networking night</li>
+          <li>May 02, 2026: Campus hackathon</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+{% endblock %}

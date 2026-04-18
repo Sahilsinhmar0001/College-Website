@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240">
+  <rect width="100%" height="100%" fill="#fff7ed"/>
+  <g fill="#ea580c" font-family="sans-serif">
+    <rect x="18" y="18" width="120" height="80" rx="8" fill="#fff1e6" />
+    <text x="150" y="48" font-size="18" font-weight="700">Fall Open Day</text>
+    <text x="150" y="78" font-size="13" fill="#475569">Visit campus on October 12 for tours and talks.</text>
+  </g>
+</svg>

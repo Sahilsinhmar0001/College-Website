@@ -1,0 +1,63 @@
+{% extends "subpage.html" %}
+
+{% block page_eyebrow %}Campus Life{% endblock %}
+{% block page_title %}Campus Life{% endblock %}
+{% block page_subtitle %}Hostels, library, sports, clubs and events that make campus vibrant.{% endblock %}
+
+{% block page_content %}
+  <section style="margin-top:12px;" class="grid cols-3">
+    <div class="card">
+      <h4>Hostels</h4>
+      <p class="muted">Separate hostels for men and women with dining and common rooms.</p>
+    </div>
+    <div class="card">
+      <h4>Library</h4>
+      <p class="muted">Well-stocked library with digital access and study spaces.</p>
+    </div>
+    <div class="card">
+      <h4>Sports</h4>
+      <p class="muted">Outdoor and indoor sports facilities and coaching.</p>
+    </div>
+  </section>
+
+  <section style="margin-top:18px;">
+    <h2>Gallery</h2>
+    <div class="grid cols-3" style="margin-top:10px;">
+      <div class="card"><img loading="lazy" src="/static/images/gallery1.svg" alt="gallery" style="width:100%;"/></div>
+      <div class="card"><img loading="lazy" src="/static/images/gallery2.svg" alt="gallery" style="width:100%;"/></div>
+      <div class="card"><img loading="lazy" src="/static/images/gallery3.svg" alt="gallery" style="width:100%;"/></div>
+    </div>
+  </section>
+
+  <section style="margin-top:18px;">
+    <h2>Campus Tour</h2>
+    <div class="card">
+      <div style="position:relative;padding-top:56.25%;">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" style="position:absolute;left:0;top:0;width:100%;height:100%;border:0;" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="split">
+      <div class="card">
+        <h3 style="margin-top:0;">Clubs & societies</h3>
+        <ul class="muted">
+          <li>Innovation Lab and Robotics Club</li>
+          <li>Debate, Theatre, and Creative Writing</li>
+          <li>Entrepreneurship and Finance Society</li>
+        </ul>
+        <a class="btn btn-outline" href="/news" style="margin-top:8px;">View event calendar</a>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0;">Wellness & support</h3>
+        <p class="muted">Health center, counseling, accessibility services, and peer mentoring are available year-round.</p>
+        <div class="tag-group" style="margin-top:10px;">
+          <span class="pill">Health</span>
+          <span class="pill">Counseling</span>
+          <span class="pill">Accessibility</span>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
