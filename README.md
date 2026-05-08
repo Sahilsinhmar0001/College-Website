@@ -39,3 +39,6 @@ Notes:
 - Set `SECRET_KEY` and `DATABASE_PATH` via environment variables (see `.env.example`).
 - The app creates `college.db` automatically if not present. For production consider a real RDBMS.
 - Logs are written to `logs/college.log` when running outside debug mode.
+
+
+sample edit
